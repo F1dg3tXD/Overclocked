@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtxu5o4d6l022"]
+
+[ext_resource type="PackedScene" uid="uid://h7qgf8in5jjp" path="res://maps/m_test.blend" id="2_6oki6"]
+[ext_resource type="PackedScene" uid="uid://bk1exu1p74wrs" path="res://addons/GoldGdt/Pawn.tscn" id="2_h7pek"]
+[ext_resource type="Texture2D" uid="uid://c5pyyp3woqkt2" path="res://textures/James Dino Runkle.jpg" id="2_lny1k"]
+[ext_resource type="PackedScene" uid="uid://dskbe5uv5q30r" path="res://entities/phys_box.tscn" id="3_gwd1p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lu7e6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hg13p"]
+sky_material = SubResource("ProceduralSkyMaterial_lu7e6")
+
+[sub_resource type="Environment" id="Environment_q8u8h"]
+background_mode = 2
+sky = SubResource("Sky_hg13p")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t82tr"]
+albedo_texture = ExtResource("2_lny1k")
+
+[node name="m_test" instance=ExtResource("2_6oki6")]
+
+[node name="env" type="Node3D" parent="." index="1"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env" index="0"]
+environment = SubResource("Environment_q8u8h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" index="1"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 8, 20)
+use_collision = true
+size = Vector3(40, 20, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.951, 7.98004, 20.187)
+material_override = SubResource("StandardMaterial3D_t82tr")
+use_collision = true
+size = Vector3(39.8647, 19.9601, 1)
+
+[node name="Pawn" parent="." index="4" instance=ExtResource("2_h7pek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="box" parent="." index="5" instance=ExtResource("3_gwd1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7597, -4.47263)

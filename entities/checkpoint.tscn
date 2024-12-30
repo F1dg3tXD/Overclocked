@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt34kyewublap"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_fb6vo"]
+script/source = "using Godot;
+using System;
+
+public partial class Checkpoint : Node3D
+{
+	// Reference to the Area3D for detection
+	[Export]
+	public Area3D checkpointArea;
+
+	// Reference to the player's ResetPos node
+	[Export]
+	public Node3D playerResetPos;
+
+	// Reference to the checkpoint's checkPos node
+	[Export]
+	public Node3D checkPos;
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		// Connect the Area3D's body entered signal to a method
+		checkpointArea.BodyEntered += OnCheckpointEntered;
+	}
+
+	// Called when the player enters the checkpoint area
+	private void OnCheckpointEntered(Node body)
+	{
+		// Check if the body is the player (or your specific player node)
+		if (body.IsInGroup(\"player\"))
+		{
+			// Move the player's ResetPos to the checkpoint's checkPos position
+			playerResetPos.GlobalPosition = checkPos.GlobalPosition;
+		}
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkygd"]
+size = Vector3(10, 10, 10)
+
+[node name="Checkpoint" type="Node3D"]
+script = SubResource("CSharpScript_fb6vo")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kkygd")
+
+[node name="checkPos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
