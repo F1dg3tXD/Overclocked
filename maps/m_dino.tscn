@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://f5r2t0f5edok"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_anwwr"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_6277h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp82o"]
+
+[node name="QodotMap" type="Node3D"]
+script = ExtResource("1_anwwr")
+map_file = "E:/Godot/Projects/Overclocked/Github/maps/dino.map"
+entity_fgd = ExtResource("2_6277h")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_qp82o")

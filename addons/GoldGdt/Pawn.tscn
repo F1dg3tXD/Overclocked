@@ -204,6 +204,7 @@ gizmo_extents = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022803, 0)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_yxqeo")
+cast_shadow = 3
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="RayCast3D" type="RayCast3D" parent="Body/Horizontal View/Vertical View/Camera Mount"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bbjh256b4ar71"
+path="res://.godot/imported/dino.map-1c54f3309d1dafdd821a849fdb71dd76.tres"
+
+[deps]
+
+source_file="res://maps/dino.map"
+dest_files=["res://.godot/imported/dino.map-1c54f3309d1dafdd821a849fdb71dd76.tres"]
+
+[params]
+
