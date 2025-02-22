@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"_tb_mod" "entities"
+"_tb_mod" "textures;oc;entities"
 // brush 0
 {
 ( -1120 -1072 -16 ) ( -1136 1072 -16 ) ( -1104 1040 16 ) Texture_2_Diffuse [ 0 -1.0000000000000002 0 -992 ] [ 0 0 1.0000000000000002 19.450981 ] 0 1 1
