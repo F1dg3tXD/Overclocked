@@ -1,97 +1,51 @@
-![](https://raw.githubusercontent.com/Shfty/qodot-extras/master/graphics/qodot_logo_small.png)
+<p align="center"><img src="https://github.com/func-godot/.github/assets/44485952/53bdc589-33e8-4a39-8707-01a5f850d155" alt="FuncGodotRanger" width="15%" /> 
+<img src="https://github.com/func-godot/.github/assets/44485952/b7c19218-2089-4319-a2bd-6ce4b354c1ce" alt="FuncGodot" width="80%"/></p>
 
-Quake *.map* file support for Godot 4.x. **For the original Godot 3.x plugin, see [Qodot-Plugin](https://github.com/QodotPlugin/qodot-plugin/).**
+***FuncGodot*** is a plugin for [Godot 4](https://godotengine.org/) that allows users to generate Godot scenes using the [Quake MAP file format](https://quakewiki.org/wiki/Quake_Map_Format). Map files can be made in a variety of editors, the most commonly recommended one being [TrenchBroom](https://trenchbroom.github.io/). It is a reworking and rewrite of the [Qodot](https://github.com/QodotPlugin/Qodot) plugin for Godot 3 and 4.
 
-# About this version
+[Full documentation is available online](https://func-godot.github.io/func_godot_docs/) as well as off. Release zip files come pre-packaged with the manual, but if you need to you can [download the most up-to-date standalone copy here](https://github.com/func-godot/func_godot_docs/releases/).
 
-Latest Tested Engine Version: **4.2 rc1**
+For more help or to contribute to the community, join us on the [Official FuncGodot Discord](https://discord.gg/eBQ7EfNZSZ)!
 
-Unlike [Qodot-plugin](https://github.com/QodotPlugin/qodot-plugin/), this [Qodot](https://github.com/QodotPlugin/Qodot/) repository is currently the official version of the plugin and where active development continues. You can also find the plugin on Godot's Asset Library.
+<p align="center"><img src="https://github.com/func-godot/.github/assets/44485952/0a4d2436-884e-4cee-94a8-220df3813627" alt="TrenchBroom" width="45%" /> 
+<img src="https://github.com/func-godot/.github/assets/44485952/25e96e49-3482-40cf-ade9-99e83c3eca7d" alt="Godot FuncGodotMap Built" width="45%"/></p>
 
-## Documentation
-
-We have official [Qodot Documentation](https://qodotplugin.github.io/). The docs are undergoing maintenance, so feel free to ask questions in [Issues](https://github.com/QodotPlugin/Qodot/issues) or the [Official Discord](https://discord.gg/c72WBuG).
-
-## Overview
-
-Qodot extends the Godot editor to import Quake *.map* files, and provides a data-driven framework for converting the entities and brushes contained therein into a custom node hierarchy.
-
-![](https://raw.githubusercontent.com/wiki/Shfty/qodot-plugin/images/2-usage/in-editor.gif)
 
 ## Features
 
-- Natively import `.map` files into Godot and convert them into a usable scene tree
-- Supports
-  - Brush geometry
-  - Textures and customized UVs
-  - Convex and concave collision volumes
-  - Gameplay entities
-  - FGD (Forge Game Data) export for custom game definitions
-- Configurable scene population
-  - Leverages the map format's classname and key/value property systems
-  - Spawn and configure custom Godot scenes and scripts based on entities defined in the map editor
+- Godot Scene Generation
+  - File support for Quake `map`, `wad`, and `lmp` palette formats
+  - File support for Half-Life `wad` format
+  - Meshes from `map` brush geometry
+  - Materials and UVs from `map` texture definitions
+  - Convex and concave collision shapes
+- Entity Definition Support
+  - Fully customizable entities that can be defined for TrenchBroom and generated in Godot
+  - Leverage the `map` format's classname and key value pair systems
   - Define the visual and collision properties of brush entities on a per-classname basis
+  - Retrieve easy to access mesh metadata for per face material information
+  - Define point entities that can be generated from node class name and script or from packed scenes
+  - Generate GLB display models with correct orientation and scale for point entities in map editors with GLTF support
+  - FGD (Forge Game Data) export
 - TrenchBroom Integration
-  - Simple, intuitive map editor with a strong feature set
-  - TrenchBroom game configurations can be exported for tighter workflow integration
-  - Nested TrenchBroom groups can be used to build a tree hierarchy from the format's standard flat structure
+  - GameConfig export
+  - Brush and Face Tags
+  - `model` keyword and scale expression
+- NetRadiant Custom Integration
+  - Gamepack Export
+  - Shader definitions
+  - Customizable build options
 
-## Showcase
-
-[![](https://raw.githubusercontent.com/Shfty/qodot-extras/master/showcase/sunkper-props-thumbnail.jpg)](https://raw.githubusercontent.com/Shfty/qodot-extras/master/showcase/sunkper-props.jpg)
-
-Assorted props by [@SunkPer](https://twitter.com/SunkPer)
-
-[![](https://raw.githubusercontent.com/Shfty/qodot-extras/master/showcase/sunkper-summer-island.gif)](https://cdn.app.com/attachments/651209074930876416/659427504309796876/Project_Summer_Island_WIP_25.mp4)
-
-Summer Island by [@SunkPer](https://twitter.com/SunkPer)
-
-## Thesis
-
-Qodot was created to solve a long-standing problem with modern game engines: The lack of simple, accessible level editing functionality for users without 3D modeling expertise.
-
-Unity, Unreal and Godot are all capable of CSG to some extent or other with varying degrees of usability, but lack fine-grained direct manipulation of geometry, as well as per-face texture and UV manipulation. It's positioned more as a prototyping tool to be used ahead of a proper art pass than a viable methodology.
-
-Conversely, dedicated 3D modeling packages like Maya or Blender are very powerful and can iterate fast in experienced hands, but have an intimidating skill floor for users with a programming-focused background that just want to build levels for their game.
-
-Enter the traditional level editor: Simple tools built for games like Doom, Quake and Duke Nukem 3D that operate in the design language of a video game and are created for use by designers, artists and programmers alike. Thanks to years of community support, classic Quake is still alive, kicking, and producing high-quality content and mapping software alike. This continued popularity combined with its simplicity means the Quake *.map* format presents a novel solution.
-
-## Extra Content
-
-[The Qodot extra content repository](https://github.com/Shfty/qodot-extras) contains a set of additional resources, such as map editor plugins, logo graphics, showcase content and screenshots.
-
-## Qodot Elsewhere
-
-[Discord - Qodot](https://discord.gg/c72WBuG)
-
-[Reddit - Qodot](https://www.reddit.com/r/godot/comments/e41ldk/qodot_quake_map_file_support_for_godot/)
-
-[Godot Asset Library - Qodot 3.x](https://godotengine.org/asset-library/asset/446)
+## Confirmed Compatible Map Editors
+  - TrenchBroom
+  - J.A.C.K.
+  - NetRadiant Custom[br]
+Help us add to this list by testing out your preferred map editor and helping us come up with compatibility solutions!
 
 ## Credits
 
-[Josh "Shifty" Palmer](https://twitter.com/ShiftyAxel) - Original Qodot plugin
+FuncGodot was created by [Hannah "EMBYR" Crawford](https://embyr.sh/), [Emberlynn Bland](https://github.com/deertears/), and [Tim "RhapsodyInGeek" Maccabe](https://github.com/RhapsodyInGeek), reworked from the [Godot 4 port of Qodot](https://github.com/QodotPlugin/Qodot/tree/main) by Embyr, with contributions from members of the FuncGodot, Qodot, Godot, and Quake Mapping Communities.
 
-[Hannah "EMBYR" Crawford](https://embyr.sh/) - Godot 4.x & ~C#~ GDScript port & maintainance
+Both plugins are based on the original [Qodot for Godot 3.5](https://github.com/QodotPlugin/qodot-plugin/) created by [Josh "Shifty" Palmer](https://twitter.com/ShiftyAxel).
 
-[Emberlynn Bland](https://github.com/deertears/) - Starting the docs & community support & maintenance
-
-[Kristian Duske](https://twitter.com/kristianduske) - For creating TrenchBroom and inspiring the creation of Qodot
-
-Arkii - For example code and handy documentation of the Valve 220 format
-
-[TheRektafire](https://github.com/TheRektafire) - For a variety of useful tidbits on the .map format
-
-[Calinou](https://github.com/Calinou) - For making Qodot work on case-sensitive systems
-
-[SunkPer](https://twitter.com/SunkPer) - For showcase screenshots
-
-[lordee](https://github.com/lordee), [DistractedMOSFET](https://github.com/distractedmosfet) and winadam- For laying the groundwork of the FGD export and entity scripting systems.
-
-[fossegutten](https://github.com/fossegutten) - For a typed GDScript pass
-
-[Corruptinator](https://github.com/Corruptinator) - For the idea of using TrenchBroom groups as a scene tree.
-
-[grenappels](https://github.com/grenappels) - For implementing smoothed brush normal edge splitting
-
-[FreePBR.com](https://freepbr.com) - For royalty-free PBR example textures
+<p align="center"><img src="https://github.com/func-godot/.github/assets/44485952/9ff9cd96-024b-4202-b4a2-611741b81609" alt="Godambler" /></p>
