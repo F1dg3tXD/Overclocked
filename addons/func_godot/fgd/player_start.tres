@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDEntityClass" load_steps=3 format=3 uid="uid://cfx665orids1o"]
+
+[ext_resource type="PackedScene" uid="uid://cham4tl51lb5f" path="res://entities/player_start.tscn" id="1_6q28d"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_entity_class.gd" id="1_7wcsy"]
+
+[resource]
+script = ExtResource("1_7wcsy")
+classname = ""
+description = ""
+func_godot_internal = false
+base_classes = Array[Resource]([ExtResource("1_6q28d")])
+class_properties = {}
+class_property_descriptions = {}
+auto_apply_to_matching_node_properties = false
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_class = ""
+name_property = ""

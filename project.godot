@@ -24,6 +24,8 @@ GAME="*res://GameManager.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 Console="*res://addons/console/console.gd"
 DebugConsole="*res://entities/debug_console.gd"
+Player="*res://addons/GoldGdt/Pawn.tscn"
+DiscordRpc="*res://global/discordRPC.gd"
 
 [dotnet]
 
@@ -31,7 +33,7 @@ project/assembly_name="Overclocked"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GoldGdt/plugin.cfg", "res://addons/console/plugin.cfg", "res://addons/func_godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/GoldGdt/plugin.cfg", "res://addons/console/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/func_godot/plugin.cfg")
 
 [input]
 
@@ -88,7 +90,8 @@ free_look={
 
 [physics]
 
-3d/physics_engine="JoltPhysics3D"
+3d/run_on_separate_thread=true
+common/physics_ticks_per_second=120
 
 [rendering]
 
